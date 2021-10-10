@@ -1,7 +1,7 @@
 # jText: A cross platform text editor for ordinary people
 
 ---
-[Project Github](https://zombo.com/)
+[Project Github](https://github.com/christianitis/jText)
 ## About
 jText is a basic text editor written in Java. It uses the Swing widget kit.
 
