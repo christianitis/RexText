@@ -1,26 +1,26 @@
 /*
  *     Copyright (C) 2021 Christian Hollinger
  *
- *     This file is part of jText.
+ *     This file is part of RexText.
  *
- *     jText is free software: you can redistribute it and/or modify
+ *     RexText is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
  *     the Free Software Foundation, either version 3 of the License, or
  *     (at your option) any later version.
  *
- *     jText is distributed in the hope that it will be useful,
+ *     RexText is distributed in the hope that it will be useful,
  *     but WITHOUT ANY WARRANTY; without even the implied warranty of
  *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *     GNU General Public License for more details.
  *
  *     You should have received a copy of the GNU General Public License
- *     along with jText. If not, see <https://www.gnu.org/licenses/>.
+ *     along with RexText. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package jtext.components;
+package rextext.components;
 
-import jtext.Constants;
-import jtext.MainWindow;
+import rextext.Constants;
+import rextext.MainWindow;
 
 import javax.swing.*;
 import java.io.FileWriter;
@@ -28,15 +28,15 @@ import java.io.IOException;
 
 /**
  * A {@link javax.swing.JMenuBar} containing all the {@link javax.swing.JMenu}s and {@link javax.swing.JMenuItem}s for
- * a {@link jtext.MainWindow}
+ * a {@link rextext.MainWindow}
  */
-public class JTextMenuBar extends JMenuBar {
+public class MenuBar extends JMenuBar {
 
     private final MainWindow window;
     public JMenu file_menu = new FileMenu();
     public JMenu edit_menu = new EditMenu();
 
-    public JTextMenuBar(MainWindow window) {
+    public MenuBar(MainWindow window) {
         this.window = window;
         add(file_menu);
     }
