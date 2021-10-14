@@ -1,9 +1,9 @@
-# jText: A cross platform text editor for ordinary people
+# RexText: A cross platform text editor for ordinary people
 
 ---
-[Project Github](https://github.com/christianitis/jText)
+[Project Github](https://github.com/christianitis/RexText)
 ## About
-jText is a basic text editor written in Java. It uses the Swing widget kit.
+RexText is a basic text editor written in Java. It uses the Swing widget kit.
 
 ### License
 This project is licensed under the GNU Public License Version 3.
