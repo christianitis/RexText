@@ -21,6 +21,6 @@ package rextext;
 
 public class Main {
     public static void main(String[] args) {
-        new MainWindow(); // TODO: 10/12/21 Open based on args or MIME
+        new MainWindow(); // TODO: 10/12/21 Open file based on args or MIME
     }
 }

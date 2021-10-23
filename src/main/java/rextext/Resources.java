@@ -19,6 +19,23 @@
 
 package rextext;
 
-public record Constants() {
+import javax.swing.*;
+
+public class Resources {
+
     public static final String USERHOME = System.getProperty("user.home");
+
+    public static final record Icons() {
+        public static final String NEW24 = "/jlfgr-1_0/toolbarButtonGraphics/general/New24.gif";
+        public static final String SAVE24 = "/jlfgr-1_0/toolbarButtonGraphics/general/Save24.gif";
+        public static final String SAVEAS24 = "/jlfgr-1_0/toolbarButtonGraphics/general/SaveAs24.gif";
+        public static final String OPEN24 = "/jlfgr-1_0/toolbarButtonGraphics/general/Open24.gif";
+    }
+
+    public static ImageIcon GET_IMAGE_ICON(String name) { 
+        var url = Resources.class.getResource(name);
+        return new ImageIcon(url);
+    }
+
+
 }

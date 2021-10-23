@@ -19,12 +19,14 @@
 
 package rextext.components;
 
-import rextext.Constants;
+import static rextext.Resources.*;
 import rextext.MainWindow;
 
 import javax.swing.*;
 import java.io.FileWriter;
 import java.io.IOException;
+
+
 
 /**
  * A {@link javax.swing.JMenuBar} containing all the {@link javax.swing.JMenu}s and {@link javax.swing.JMenuItem}s for
@@ -42,10 +44,10 @@ public class MenuBar extends JMenuBar {
     }
 
     private class FileMenu extends JMenu {
-        JMenuItem file_new = new JMenuItem("New");
-        JMenuItem file_save = new JMenuItem("Save");
-        JMenuItem file_saveAs = new JMenuItem("Save As...");
-        JMenuItem file_open = new JMenuItem("Open");
+        JMenuItem file_new = new JMenuItem("New", GET_IMAGE_ICON(Icons.NEW24));
+        JMenuItem file_save = new JMenuItem("Save", GET_IMAGE_ICON(Icons.SAVE24));
+        JMenuItem file_saveAs = new JMenuItem("Save As...", GET_IMAGE_ICON(Icons.SAVEAS24));
+        JMenuItem file_open = new JMenuItem("Open", GET_IMAGE_ICON(Icons.OPEN24));
 
         FileMenu() {
             setText("File");
@@ -70,12 +72,13 @@ public class MenuBar extends JMenuBar {
             file_saveAs.addActionListener(actionEvent -> saveAsNew());
 
             file_open.addActionListener(actionEvent -> {
-                var fileChooser = new JFileChooser(Constants.USERHOME);
+                var fileChooser = new JFileChooser(USERHOME);
                 fileChooser.showOpenDialog(null);
                 var file = fileChooser.getSelectedFile();
                 assert file.exists();
                 new MainWindow(file);
             });
+
 
             add(file_new);
             add(file_save);

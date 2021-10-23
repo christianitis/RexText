@@ -20,25 +20,27 @@
 package rextext;
 
 import rextext.components.MenuBar;
-
-
 import javax.swing.*;
 import java.io.*;
 import java.nio.file.Files;
 
-import static rextext.Constants.USERHOME;
-
+import static rextext.Resources.USERHOME;
 
 public class MainWindow {
+
     private File file;
+    private JPanel panel;
+    private JTextArea textPane;
+
+
     public File getFile() {
         return file;
     }
 
     public void reloadFile(File file) throws IOException {
         this.file = file;
-        textArea.setText(getFileText(this.file));
-        startingText = textArea.getText();
+        textPane.setText(getFileText(this.file));
+        startingText = textPane.getText();
     }
 
     private String startingText = "";
@@ -46,13 +48,11 @@ public class MainWindow {
         return startingText.equals(getText());
     }
 
-
     public JFrame frame = new JFrame("RexText");
     public MenuBar menuBar = new MenuBar(this);
-    private JPanel panel;
-    private JTextArea textArea;
+
     public String getText() {
-        return textArea.getText();
+        return textPane.getText();
     }
 
     public static String getFileText(File file) throws IOException {
@@ -79,8 +79,8 @@ public class MainWindow {
 
     private void loadFile() {
         try {
-            textArea.setText(getFileText(file));
-            startingText = textArea.getText();
+            textPane.setText(getFileText(file));
+            startingText = textPane.getText();
         } catch (IOException e) {
             System.err.println(e.getMessage());
             JOptionPane.showMessageDialog(null, e.getMessage(), "Unable to Open File", JOptionPane.ERROR_MESSAGE);
@@ -88,12 +88,15 @@ public class MainWindow {
     }
 
     private void setupWindow() {
+
+        // textPane.getDocument().addUndoableEditListener(new UndoManager());
         frame.setContentPane(panel);
         frame.setJMenuBar(menuBar);
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setSize(500, 500);
         frame.setVisible(true);
+
     }
 
 }
